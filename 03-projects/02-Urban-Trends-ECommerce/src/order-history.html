@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order History | Urban Trends</title>
+    <!-- font awesome css -->
+    <link
+      rel="stylesheet"
+      href="./public/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="font-inter">
+    <!-- MARK: Navigation bar -->
+    <nav class="bg-white shadow-lg">
+      <div
+        class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8"
+      >
+        <!-- Logo -->
+        <a
+          href="./index.html"
+          class="select-none text-xl font-bold text-primary"
+          >Urban Trends</a
+        >
+
+        <!-- search bar (hidden on mobile) -->
+        <div class="hidden md:block">
+          <input
+            type="search"
+            placeholder="Search products..."
+            class="w-60 rounded-lg border border-gray-300 p-2"
+          />
+        </div>
+
+        <!-- Nav-links (hidden on mobile) -->
+        <div
+          class="hidden gap-4 text-gray-700 hover:*:font-medium hover:*:text-primary hover:*:underline md:flex"
+        >
+          <a href="./index.html">Home</a>
+          <a href="./products.html">Shop</a>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4 text-gray-700">
+          <!-- user profile -->
+          <div class="group relative">
+            <!-- user icon -->
+            <button class="size-6 hover:text-primary">
+              <i class="fa-user fa-regular"></i>
+            </button>
+
+            <div
+              class="pointer-events-none absolute -right-2 top-full translate-y-2 rounded-lg border-2 bg-white opacity-0 shadow-inner duration-500 group-hover:pointer-events-auto group-hover:-translate-y-1 group-hover:opacity-100"
+            >
+              <a
+                href="./login.html"
+                class="block px-6 py-2 hover:bg-slate-200/70"
+                >Login</a
+              >
+              <a
+                href="./wishlist.html"
+                class="block px-6 py-2 hover:bg-slate-200/70"
+                >Wishlist</a
+              >
+              <a
+                href="./dashboard.html"
+                class="block px-6 py-2 hover:bg-slate-200/70"
+                >Dashboard</a
+              >
+              <a
+                href="./order-history.html"
+                class="block px-6 py-2 hover:bg-slate-200/70"
+                >Orders</a
+              >
+              <a
+                href="./user-account.html"
+                class="block px-6 py-2 hover:bg-slate-200/70"
+                >Account</a
+              >
+            </div>
+          </div>
+
+          <!-- cart icon -->
+          <a href="./cart.html" class="">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+
+          <!-- menu button -->
+          <button
+            id="menu-toggle"
+            class="size-6 hover:text-primary focus:outline-none md:hidden"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="max-h-0 overflow-hidden border-t border-x-gray-200 bg-white duration-500 *:block *:px-4 *:py-2 *:text-gray-700 hover:*:bg-gray-100 md:hidden"
+      >
+        <a href="./index.html">Home</a>
+        <a href="./products.html">Shop</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main class="min-h-screen bg-gray-100">
+      <div class="max-container py-12">
+        <section class="rounded-lg bg-white p-8 shadow-lg">
+          <h2 class="mb-6 text-3xl font-semibold text-gray-800">
+            Order History
+          </h2>
+
+          <!-- Order History Table -->
+          <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="whitespace-nowrap px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-700"
+                  >
+                    Order Id
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-700"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-700"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-700"
+                  >
+                    total
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider text-gray-700"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                <tr>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    123456
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    Aug 13, 2024
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <span
+                      class="rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+                      >Delivered</span
+                    >
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    $99.99
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <a
+                      href="order-details.html"
+                      class="font-medium text-teal-600 duration-200 hover:text-teal-800"
+                      >View Details</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    673456
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    Jul 28, 2024
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <span
+                      class="rounded-full bg-yellow-100 px-2 text-xs font-semibold leading-5 text-yellow-800"
+                      >Processing</span
+                    >
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    $99.99
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <a
+                      href="order-details.html"
+                      class="font-medium text-teal-600 duration-200 hover:text-teal-800"
+                      >View Details</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    873256
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    Jul 10, 2024
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <span
+                      class="rounded-full bg-red-100 px-2 text-xs font-semibold leading-5 text-red-800"
+                      >Cancelled</span
+                    >
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    $49.99
+                  </td>
+                  <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-700">
+                    <a
+                      href="order-details.html"
+                      class="font-medium text-teal-600 duration-200 hover:text-teal-800"
+                      >View Details</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- MARK: Pagination -->
+          <div class="mt-6 flex justify-end">
+            <nav
+              class="inline-flex -space-x-px rounded-md font-medium text-gray-500 shadow-sm"
+              aria-label="Pagination"
+            >
+              <a
+                href="#"
+                class="rounded-l-md border border-gray-300 px-2 py-2 text-sm hover:bg-gray-50"
+                >Previous</a
+              >
+              <a
+                href="#"
+                class="z-10 border border-teal-500 bg-teal-50 px-4 py-2 text-sm text-teal-600"
+                >1</a
+              >
+              <a
+                href="#"
+                class="border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50"
+                >2</a
+              >
+              <a
+                href="#"
+                class="border border-gray-300 px-4 py-2 text-sm hover:bg-gray-50"
+                >3</a
+              >
+              <a
+                href="#"
+                class="rounded-r-md border border-gray-300 px-2 py-2 text-sm hover:bg-gray-50"
+                >Next</a
+              >
+            </nav>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- MARK: Footer -->
+    <footer class="bg-gray-900 py-16 text-white">
+      <div class="max-container">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <!-- company info -->
+          <div>
+            <h2 class="text-2xl font-bold">Urban Trends</h2>
+            <p class="mt-4 text-gray-400">
+              Urban Trends offers the latest in fashion trends with high-quality
+              materials and modern designs. Our mission is to bring style and
+              comfort to everyone.
+            </p>
+            <p class="mt-4 text-gray-400">
+              &copy; 2024 Urban Trends. All rights reserved.
+            </p>
+          </div>
+
+          <!-- Navigation Links -->
+          <div>
+            <h3 class="text-lg font-semibold">Company</h3>
+            <ul class="mt-4 space-y-2 text-gray-400 hover:*:text-white">
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Links -->
+          <div>
+            <h3 class="text-lg font-semibold">Support</h3>
+            <ul class="mt-4 space-y-2 text-gray-400 hover:*:text-white">
+              <li><a href="./contact.html">Contact Us</a></li>
+              <li><a href="./faq.html">FAQs</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter & Social Links -->
+          <div>
+            <h3 class="text-lg font-semibold">Stay Connected</h3>
+            <p class="mt-4 text-gray-400">
+              Subscribe to our newsletter to get the latest updates on new
+              arrivals and exclusive offers.
+            </p>
+            <form class="mt-4">
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full rounded bg-gray-800 p-2 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                class="mt-4 w-full rounded bg-blue-500 py-2 font-semibold text-white duration-300 hover:bg-blue-600"
+              >
+                Subscribe
+              </button>
+            </form>
+
+            <!-- Social icons -->
+            <div
+              class="mt-8 flex justify-center gap-4 *:size-6 hover:*:text-white"
+            >
+              <a href="#" class="text-gray-400">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
